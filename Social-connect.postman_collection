@@ -1,0 +1,3247 @@
+{
+	"info": {
+		"_postman_id": "745765fb-b1a4-491e-aed8-df47ae4531ae",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27028283"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user1\",\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"pass1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/register/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user1\",\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"pass1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/register/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 29 Aug 2025 17:02:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"user1\",\n    \"email\": \"user1@example.com\",\n    \"first_name\": \"\",\n    \"last_name\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user1\", \r\n    \"password\": \"pass1234\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/login/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user1\", \r\n    \"password\": \"pass1234\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/login/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 29 Aug 2025 17:03:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "489"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NjU3MzQxMCwiaWF0IjoxNzU2NDg3MDEwLCJqdGkiOiIzNWEyMmQ2MmZiYjI0YjVjYjlkY2ZiNjc0YTA2MTBiNCIsInVzZXJfaWQiOiIyIn0.ksAheT8sTEWmNHvWywiMtWaqNOq85MQiERFthAHUhpQ\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NDkwNjEwLCJpYXQiOjE3NTY0ODcwMTAsImp0aSI6IjI0YmMxNDZhMGIyYzQ0ODM5M2EzZmIzMzFhNjAzY2JhIiwidXNlcl9pZCI6IjIifQ.Ge0quskd1IR0l1b4QduHIPvmkuhCz85GOMgpMknuLio\"\n}"
+				}
+			]
+		},
+		{
+			"name": "View Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NTc0MDA1LCJpYXQiOjE3NTY1NzA0MDUsImp0aSI6IjI2NDUyYjMxNzQ1NjQwZGQ5MTZiYTg0NjRkNjM4OWM5IiwidXNlcl9pZCI6IjIifQ.PliT89ApiEMd57JHzxYiC9J1QR6k6zsT_jUU2fgJKgA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users/me/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View Profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/users/me/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"me",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 29 Aug 2025 17:08:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "227"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"user1\",\n    \"email\": \"user1@example.com\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"bio\": \"\",\n    \"avatar_url\": \"\",\n    \"website\": \"\",\n    \"location\": \"\",\n    \"privacy\": \"public\",\n    \"followers_count\": 0,\n    \"following_count\": 0,\n    \"posts_count\": 0,\n    \"role\": \"user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NTcyOTg3LCJpYXQiOjE3NTY1NjkzODgsImp0aSI6ImQ0MjUyMzQ5ZjQ0MzQwNWE5MjdjMjMyZGZiNGQxNjEzIiwidXNlcl9pZCI6IjIifQ.DgnAU8szliORBdDSldr7_3Ie8qZ5xMw0m-mycGPj2oA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"bio\": \"New bio\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/users/me/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Profile",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"bio\": \"New bio\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/users/me/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"me",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 30 Aug 2025 15:56:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"user1\",\n    \"email\": \"user1@example.com\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"bio\": \"New bio\",\n    \"avatar_url\": \"\",\n    \"website\": \"\",\n    \"location\": \"\",\n    \"privacy\": \"public\",\n    \"followers_count\": 0,\n    \"following_count\": 0,\n    \"posts_count\": 0,\n    \"role\": \"user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Password Reset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NTc0MDA1LCJpYXQiOjE3NTY1NzA0MDUsImp0aSI6IjI2NDUyYjMxNzQ1NjQwZGQ5MTZiYTg0NjRkNjM4OWM5IiwidXNlcl9pZCI6IjIifQ.PliT89ApiEMd57JHzxYiC9J1QR6k6zsT_jUU2fgJKgA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"user1@example.com\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/password-reset/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"password-reset",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Password Reset",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"user1@example.com\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/password-reset/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"password-reset",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 30 Aug 2025 16:37:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password reset email sent.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Password Reset Confirm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NTc0MDA1LCJpYXQiOjE3NTY1NzA0MDUsImp0aSI6IjI2NDUyYjMxNzQ1NjQwZGQ5MTZiYTg0NjRkNjM4OWM5IiwidXNlcl9pZCI6IjIifQ.PliT89ApiEMd57JHzxYiC9J1QR6k6zsT_jUU2fgJKgA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"email\": \"user1@example.com\", \r\n    \"token\": \"cvdc4e-78f5c28509780a1301936cba08c6b94d\", \r\n    \"new_password\": \"newpass123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/password-reset-confirm/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"password-reset-confirm",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Password Reset Confirm",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"user1@example.com\", \r\n    \"token\": \"cvdc4e-78f5c28509780a1301936cba08c6b94d\", \r\n    \"new_password\": \"newpass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/password-reset-confirm/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"password-reset-confirm",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 30 Aug 2025 16:38:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password reset successful.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NTc0MDA1LCJpYXQiOjE3NTY1NzA0MDUsImp0aSI6IjI2NDUyYjMxNzQ1NjQwZGQ5MTZiYTg0NjRkNjM4OWM5IiwidXNlcl9pZCI6IjIifQ.PliT89ApiEMd57JHzxYiC9J1QR6k6zsT_jUU2fgJKgA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"old_password\": \"newpass123\", \r\n    \"new_password\": \"newpass456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/change-password/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"change-password",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Change Password",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"old_password\": \"newpass123\", \r\n    \"new_password\": \"newpass456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/change-password/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"change-password",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 30 Aug 2025 16:40:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Password changed successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIxODg5LCJpYXQiOjE3NTY2MTgyODksImp0aSI6ImU1OWVlYTBiNjI1ZTQ0ZTFhMjM4M2E2NjRhYWU0Y2JhIiwidXNlcl9pZCI6IjIifQ.RYix-8ScdH7VawbKf54_RulvM0c94w1izYcA3IuRTj0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "Hello!",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "general",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "postman-cloud:///1f085c0c-7b7c-4550-9fcc-5158c5287b4b"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Posts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Hello!",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "general",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f085c0c-7b7c-4550-9fcc-5158c5287b4b"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/posts/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 30 Aug 2025 17:31:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "374"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"content\": \"Hello!\",\n    \"author\": 2,\n    \"author_username\": \"user1\",\n    \"created_at\": \"2025-08-30T17:31:46.434189Z\",\n    \"updated_at\": \"2025-08-30T17:31:46.434189Z\",\n    \"image_url\": \"https://ncjyhwbsbdadizcqdjub.supabase.co/storage/v1/object/public/posts/posts/user1_360_F_147588348_M6xuacHOZ95cHFgMUM3F3AFF69wlqtq3.jpg?\",\n    \"category\": \"general\",\n    \"is_active\": false,\n    \"like_count\": 0,\n    \"comment_count\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "List Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIwMzE3LCJpYXQiOjE3NTY2MTY3MTcsImp0aSI6Ijk1OTQ4Yjk4ODAxNDRiNjA4N2NlNDUxMWZmYzgxYTZkIiwidXNlcl9pZCI6IjIifQ.9p1eJ_6XeNowaIjkHJhSOFSR0LAWNjZhIU7sNkgX6D0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Posts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/api/posts/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:05:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "425"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"content\": \"Hello!\",\n            \"author\": 2,\n            \"author_username\": \"user1\",\n            \"created_at\": \"2025-08-30T17:31:46.434189Z\",\n            \"updated_at\": \"2025-08-30T17:31:46.434189Z\",\n            \"image_url\": \"https://ncjyhwbsbdadizcqdjub.supabase.co/storage/v1/object/public/posts/posts/user1_360_F_147588348_M6xuacHOZ95cHFgMUM3F3AFF69wlqtq3.jpg?\",\n            \"category\": \"general\",\n            \"is_active\": true,\n            \"like_count\": 0,\n            \"comment_count\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Retrive Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIwMzE3LCJpYXQiOjE3NTY2MTY3MTcsImp0aSI6Ijk1OTQ4Yjk4ODAxNDRiNjA4N2NlNDUxMWZmYzgxYTZkIiwidXNlcl9pZCI6IjIifQ.9p1eJ_6XeNowaIjkHJhSOFSR0LAWNjZhIU7sNkgX6D0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/posts/1/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/posts/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:12:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "373"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"content\": \"Hello!\",\n    \"author\": 2,\n    \"author_username\": \"user1\",\n    \"created_at\": \"2025-08-30T17:31:46.434189Z\",\n    \"updated_at\": \"2025-08-30T17:31:46.434189Z\",\n    \"image_url\": \"https://ncjyhwbsbdadizcqdjub.supabase.co/storage/v1/object/public/posts/posts/user1_360_F_147588348_M6xuacHOZ95cHFgMUM3F3AFF69wlqtq3.jpg?\",\n    \"category\": \"general\",\n    \"is_active\": true,\n    \"like_count\": 0,\n    \"comment_count\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIxODg5LCJpYXQiOjE3NTY2MTgyODksImp0aSI6ImU1OWVlYTBiNjI1ZTQ0ZTFhMjM4M2E2NjRhYWU0Y2JhIiwidXNlcl9pZCI6IjIifQ.RYix-8ScdH7VawbKf54_RulvM0c94w1izYcA3IuRTj0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"New content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/1/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Post",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"New content\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts/1/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:31:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "378"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"content\": \"New content\",\n    \"author\": 2,\n    \"author_username\": \"user1\",\n    \"created_at\": \"2025-08-30T17:31:46.434189Z\",\n    \"updated_at\": \"2025-08-31T05:31:54.519747Z\",\n    \"image_url\": \"https://ncjyhwbsbdadizcqdjub.supabase.co/storage/v1/object/public/posts/posts/user1_360_F_147588348_M6xuacHOZ95cHFgMUM3F3AFF69wlqtq3.jpg?\",\n    \"category\": \"general\",\n    \"is_active\": true,\n    \"like_count\": 0,\n    \"comment_count\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIxODg5LCJpYXQiOjE3NTY2MTgyODksImp0aSI6ImU1OWVlYTBiNjI1ZTQ0ZTFhMjM4M2E2NjRhYWU0Y2JhIiwidXNlcl9pZCI6IjIifQ.RYix-8ScdH7VawbKf54_RulvM0c94w1izYcA3IuRTj0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/posts/1/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/posts/1/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:33:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Like Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIxODg5LCJpYXQiOjE3NTY2MTgyODksImp0aSI6ImU1OWVlYTBiNjI1ZTQ0ZTFhMjM4M2E2NjRhYWU0Y2JhIiwidXNlcl9pZCI6IjIifQ.RYix-8ScdH7VawbKf54_RulvM0c94w1izYcA3IuRTj0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/posts/2/like/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2",
+						"like",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Like post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/posts/2/like/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2",
+								"like",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:40:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Post liked.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Unlike Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIxODg5LCJpYXQiOjE3NTY2MTgyODksImp0aSI6ImU1OWVlYTBiNjI1ZTQ0ZTFhMjM4M2E2NjRhYWU0Y2JhIiwidXNlcl9pZCI6IjIifQ.RYix-8ScdH7VawbKf54_RulvM0c94w1izYcA3IuRTj0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/posts/2/like/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2",
+						"like",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/posts/2/like/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2",
+								"like",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:45:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Post unliked.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIzMjEzLCJpYXQiOjE3NTY2MTk2MTMsImp0aSI6IjA3N2M0MGUzNDY0YjQxYWFhZDU0MzRiY2ZjMTVhMDUyIiwidXNlcl9pZCI6IjIifQ.nyWfQRFQzs0d1VzQ7CcJSVSGZmeiIyVya0Z8t3hmz_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"content\": \"Nice post!\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/2/comments/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"content\": \"Nice post!\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts/2/comments/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2",
+								"comments",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 05:54:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"content\": \"Nice post!\",\n    \"author\": 2,\n    \"author_username\": \"user1\",\n    \"post\": 2,\n    \"created_at\": \"2025-08-31T05:54:43.876284Z\",\n    \"is_active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Comments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIzMjEzLCJpYXQiOjE3NTY2MTk2MTMsImp0aSI6IjA3N2M0MGUzNDY0YjQxYWFhZDU0MzRiY2ZjMTVhMDUyIiwidXNlcl9pZCI6IjIifQ.nyWfQRFQzs0d1VzQ7CcJSVSGZmeiIyVya0Z8t3hmz_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/2/comments/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts/2/comments/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2",
+								"comments",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 06:02:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "139"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"content\": \"Nice post!\",\n        \"author\": 2,\n        \"author_username\": \"user1\",\n        \"post\": 2,\n        \"created_at\": \"2025-08-31T05:54:43.876284Z\",\n        \"is_active\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIzMjEzLCJpYXQiOjE3NTY2MTk2MTMsImp0aSI6IjA3N2M0MGUzNDY0YjQxYWFhZDU0MzRiY2ZjMTVhMDUyIiwidXNlcl9pZCI6IjIifQ.nyWfQRFQzs0d1VzQ7CcJSVSGZmeiIyVya0Z8t3hmz_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/comments/1/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/comments/1/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 06:03:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment deleted.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Feed",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjIzMjEzLCJpYXQiOjE3NTY2MTk2MTMsImp0aSI6IjA3N2M0MGUzNDY0YjQxYWFhZDU0MzRiY2ZjMTVhMDUyIiwidXNlcl9pZCI6IjIifQ.nyWfQRFQzs0d1VzQ7CcJSVSGZmeiIyVya0Z8t3hmz_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/feed/?page=1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"feed",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/feed/?page=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"feed",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 06:04:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "437"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": [\n        {\n            \"id\": 2,\n            \"content\": \"Hello!\",\n            \"author\": 2,\n            \"author_username\": \"user1\",\n            \"created_at\": \"2025-08-31T05:39:25.675024Z\",\n            \"updated_at\": \"2025-08-31T05:54:44.000972Z\",\n            \"image_url\": \"https://ncjyhwbsbdadizcqdjub.supabase.co/storage/v1/object/public/posts/posts/user1_360_F_147588348_M6xuacHOZ95cHFgMUM3F3AFF69wlqtq3.jpg?\",\n            \"category\": \"general\",\n            \"is_active\": true,\n            \"like_count\": 0,\n            \"comment_count\": 1,\n            \"liked\": false,\n            \"commented\": true\n        }\n    ],\n    \"page\": 1,\n    \"total\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Follow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYwODEzLCJpYXQiOjE3NTY2NTcyMTQsImp0aSI6ImIwY2U1ZTM3NWNiMzQ2M2U4OTdkMjdkYjU1NmRjMWIyIiwidXNlcl9pZCI6IjMifQ.5zDVxf5-PTSpZcCBa_DHlAwil0rSCizr_vm9Ap2y2p4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users/2/follow/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2",
+						"follow",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/2/follow/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2",
+								"follow",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:21:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User followed.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Unfollow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYwODEzLCJpYXQiOjE3NTY2NTcyMTQsImp0aSI6ImIwY2U1ZTM3NWNiMzQ2M2U4OTdkMjdkYjU1NmRjMWIyIiwidXNlcl9pZCI6IjMifQ.5zDVxf5-PTSpZcCBa_DHlAwil0rSCizr_vm9Ap2y2p4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users/2/follow/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2",
+						"follow",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/2/follow/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2",
+								"follow",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:25:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User unfollowed.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Folowers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYxMjEwLCJpYXQiOjE3NTY2NTc2MTAsImp0aSI6ImJmOGE3YTBlM2RjMjRjY2VhNjdkYmZlMTYzMWE1ZTBkIiwidXNlcl9pZCI6IjIifQ.KfCYR7ZFElqNYAwfpy8CguXVGfLH2kAAoK8O58dEfFg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users/3/followers/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"3",
+						"followers",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/3/followers/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3",
+								"followers",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:30:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2,\n            \"follower\": 2,\n            \"follower_username\": \"user1\",\n            \"following\": 3,\n            \"following_username\": \"user2\",\n            \"created_at\": \"2025-08-31T16:30:17.052220Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Following",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYxMjEwLCJpYXQiOjE3NTY2NTc2MTAsImp0aSI6ImJmOGE3YTBlM2RjMjRjY2VhNjdkYmZlMTYzMWE1ZTBkIiwidXNlcl9pZCI6IjIifQ.KfCYR7ZFElqNYAwfpy8CguXVGfLH2kAAoK8O58dEfFg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/users/2/following/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2",
+						"following",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/2/following/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2",
+								"following",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:32:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2,\n            \"follower\": 2,\n            \"follower_username\": \"user1\",\n            \"following\": 3,\n            \"following_username\": \"user2\",\n            \"created_at\": \"2025-08-31T16:30:17.052220Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Notifications",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYxMjEwLCJpYXQiOjE3NTY2NTc2MTAsImp0aSI6ImJmOGE3YTBlM2RjMjRjY2VhNjdkYmZlMTYzMWE1ZTBkIiwidXNlcl9pZCI6IjIifQ.KfCYR7ZFElqNYAwfpy8CguXVGfLH2kAAoK8O58dEfFg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/notifications/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"notifications",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/notifications/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"notifications",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:34:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "729"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 3,\n            \"recipient\": 2,\n            \"recipient_username\": \"user1\",\n            \"sender\": 3,\n            \"sender_username\": \"user2\",\n            \"notification_type\": \"follow\",\n            \"post\": null,\n            \"message\": \"user2 started following you.\",\n            \"is_read\": false,\n            \"created_at\": \"2025-08-31T16:21:48.647052Z\"\n        },\n        {\n            \"id\": 2,\n            \"recipient\": 2,\n            \"recipient_username\": \"user1\",\n            \"sender\": 2,\n            \"sender_username\": \"user1\",\n            \"notification_type\": \"comment\",\n            \"post\": 2,\n            \"message\": \"user1 commented on your post.\",\n            \"is_read\": false,\n            \"created_at\": \"2025-08-31T05:54:43.962961Z\"\n        },\n        {\n            \"id\": 1,\n            \"recipient\": 2,\n            \"recipient_username\": \"user1\",\n            \"sender\": 2,\n            \"sender_username\": \"user1\",\n            \"notification_type\": \"like\",\n            \"post\": 2,\n            \"message\": \"user1 liked your post.\",\n            \"is_read\": false,\n            \"created_at\": \"2025-08-31T05:40:04.404368Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Mark Notification as Read",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYxMjEwLCJpYXQiOjE3NTY2NTc2MTAsImp0aSI6ImJmOGE3YTBlM2RjMjRjY2VhNjdkYmZlMTYzMWE1ZTBkIiwidXNlcl9pZCI6IjIifQ.KfCYR7ZFElqNYAwfpy8CguXVGfLH2kAAoK8O58dEfFg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/notifications/3/read/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"notifications",
+						"3",
+						"read",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/notifications/3/read/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"notifications",
+								"3",
+								"read",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:39:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notification marked as read.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Mark All Notifications as Read:",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYxMjEwLCJpYXQiOjE3NTY2NTc2MTAsImp0aSI6ImJmOGE3YTBlM2RjMjRjY2VhNjdkYmZlMTYzMWE1ZTBkIiwidXNlcl9pZCI6IjIifQ.KfCYR7ZFElqNYAwfpy8CguXVGfLH2kAAoK8O58dEfFg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/notifications/mark-all-read/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"notifications",
+						"mark-all-read",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/notifications/mark-all-read/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"notifications",
+								"mark-all-read",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 16:40:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"All notifications marked as read.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin List Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYzMzY4LCJpYXQiOjE3NTY2NTk3NjgsImp0aSI6IjBiYzM0ZjdhNDUwODRjMDhhMzRkZGQ0MzFkZDIzMjAwIiwidXNlcl9pZCI6IjUifQ.n7fWjuTdK-Lo0ooUxQuDj6Xe6qmNnK6mOEqCIpIBFII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/admin/users/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"users",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/users/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 17:03:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "439"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2,\n            \"username\": \"user1\",\n            \"email\": \"user1@example.com\",\n            \"is_active\": true,\n            \"date_joined\": \"2025-08-29T17:02:13.401992Z\",\n            \"last_login\": null\n        },\n        {\n            \"id\": 3,\n            \"username\": \"user2\",\n            \"email\": \"user2@example.com\",\n            \"is_active\": true,\n            \"date_joined\": \"2025-08-31T16:18:36.521689Z\",\n            \"last_login\": null\n        },\n        {\n            \"id\": 5,\n            \"username\": \"admin\",\n            \"email\": \"\",\n            \"is_active\": true,\n            \"date_joined\": \"2025-08-31T16:59:55.125402Z\",\n            \"last_login\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin get User Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYzMzY4LCJpYXQiOjE3NTY2NTk3NjgsImp0aSI6IjBiYzM0ZjdhNDUwODRjMDhhMzRkZGQ0MzFkZDIzMjAwIiwidXNlcl9pZCI6IjUifQ.n7fWjuTdK-Lo0ooUxQuDj6Xe6qmNnK6mOEqCIpIBFII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/admin/users/2/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"users",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/users/2/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 17:05:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "134"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"user1\",\n    \"email\": \"user1@example.com\",\n    \"is_active\": true,\n    \"date_joined\": \"2025-08-29T17:02:13.401992Z\",\n    \"last_login\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Deactivates User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYzMzY4LCJpYXQiOjE3NTY2NTk3NjgsImp0aSI6IjBiYzM0ZjdhNDUwODRjMDhhMzRkZGQ0MzFkZDIzMjAwIiwidXNlcl9pZCI6IjUifQ.n7fWjuTdK-Lo0ooUxQuDj6Xe6qmNnK6mOEqCIpIBFII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/admin/users/2/deactivate/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"users",
+						"2",
+						"deactivate",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/users/2/deactivate/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"2",
+								"deactivate",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 17:07:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deactivated.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin List Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYzMzY4LCJpYXQiOjE3NTY2NTk3NjgsImp0aSI6IjBiYzM0ZjdhNDUwODRjMDhhMzRkZGQ0MzFkZDIzMjAwIiwidXNlcl9pZCI6IjUifQ.n7fWjuTdK-Lo0ooUxQuDj6Xe6qmNnK6mOEqCIpIBFII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/admin/posts/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/posts/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"posts",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 17:08:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2,\n            \"content\": \"Hello!\",\n            \"author\": 2,\n            \"created_at\": \"2025-08-31T05:39:25.675024Z\",\n            \"updated_at\": \"2025-08-31T05:54:44.000972Z\",\n            \"is_active\": true,\n            \"like_count\": 0,\n            \"comment_count\": 1,\n            \"category\": \"general\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Delete Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYzMzY4LCJpYXQiOjE3NTY2NTk3NjgsImp0aSI6IjBiYzM0ZjdhNDUwODRjMDhhMzRkZGQ0MzFkZDIzMjAwIiwidXNlcl9pZCI6IjUifQ.n7fWjuTdK-Lo0ooUxQuDj6Xe6qmNnK6mOEqCIpIBFII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/admin/posts/2/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"posts",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/posts/2/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"posts",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 17:11:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Admin get Stats",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2NjYzMzY4LCJpYXQiOjE3NTY2NTk3NjgsImp0aSI6IjBiYzM0ZjdhNDUwODRjMDhhMzRkZGQ0MzFkZDIzMjAwIiwidXNlcl9pZCI6IjUifQ.n7fWjuTdK-Lo0ooUxQuDj6Xe6qmNnK6mOEqCIpIBFII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/admin/stats/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"stats",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/stats/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"stats",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 31 Aug 2025 17:14:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total_users\": 3,\n    \"total_posts\": 0,\n    \"active_today\": 0\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
