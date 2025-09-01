@@ -1,10 +1,14 @@
 from rest_framework import generics, permissions, status, serializers
+from rest_framework.response import Response
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.views import APIView
+from django.conf import settings
 from common_permissions import IsOwnerOrReadOnly
 from .models import Post, Like, Comment
 from .serializers import PostSerializer, LikeSerializer, CommentSerializer
-from rest_framework.response import Response
-from rest_framework.parsers import MultiPartParser, FormParser
-from django.conf import settings
+import logging
+from supabase import create_client
+import re
 
 class PostListCreateView(generics.ListCreateAPIView):
 	queryset = Post.objects.filter(is_active=True).order_by('-created_at')
@@ -13,7 +17,6 @@ class PostListCreateView(generics.ListCreateAPIView):
 	parser_classes = [MultiPartParser, FormParser]
 
 	def perform_create(self, serializer):
-		import logging
 		image = self.request.FILES.get('image')
 		image_url = None
 		if image:
@@ -23,7 +26,6 @@ class PostListCreateView(generics.ListCreateAPIView):
 			if image.size > 2 * 1024 * 1024:
 				raise serializers.ValidationError('Max file size is 2MB.')
 			# Upload to Supabase Storage
-			from supabase import create_client
 			supabase_url = settings.SUPABASE_URL
 			supabase_key = settings.SUPABASE_KEY
 			supabase = create_client(supabase_url, supabase_key)
@@ -45,13 +47,10 @@ class PostListCreateView(generics.ListCreateAPIView):
 
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 	def destroy(self, request, *args, **kwargs):
-		import logging
 		instance = self.get_object()
 		image_url = getattr(instance, 'image_url', None)
 		# Delete image from Supabase storage if it exists
 		if image_url:
-			from supabase import create_client
-			import re
 			supabase_url = settings.SUPABASE_URL
 			supabase_key = settings.SUPABASE_KEY
 			supabase = create_client(supabase_url, supabase_key)
