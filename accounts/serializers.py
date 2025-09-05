@@ -30,7 +30,8 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             last_name=validated_data.get('last_name', ''),
             is_active=False
         )
-        UserProfile.objects.create(user=user)
+        if not UserProfile.objects.filter(user=user).exists():
+            UserProfile.objects.create(user=user)
         token = default_token_generator.make_token(user)
         verification_url = f"http://localhost:8000/api/auth/verify-email/?uid={user.id}&token={token}"
         send_mail(

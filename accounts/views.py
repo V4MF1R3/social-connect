@@ -76,6 +76,18 @@ class RegisterView(generics.CreateAPIView):
 	serializer_class = UserRegisterSerializer
 	permission_classes = [permissions.AllowAny]
 
+	def perform_create(self, serializer):
+		user = serializer.save(is_active=False)
+		token = default_token_generator.make_token(user)
+		verify_url = f"http://localhost:3000/verify-email?uid={user.id}&token={token}"
+		send_mail(
+			'Verify your email',
+			f'Click the link to verify your account: {verify_url}',
+			'noreply@socialconnect.com',
+			[user.email],
+			fail_silently=True
+		)
+
 class ProfileView(generics.RetrieveUpdateAPIView):
 	queryset = UserProfile.objects.all()
 	serializer_class = UserProfileSerializer
