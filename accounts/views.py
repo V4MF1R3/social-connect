@@ -80,9 +80,12 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 	queryset = UserProfile.objects.all()
 	serializer_class = UserProfileSerializer
 	def get_permissions(self):
+		user = self.request.user
 		if self.request.method in ['PUT', 'PATCH', 'DELETE']:
 			# Only owner or admin can edit/delete
-			if self.request.user.profile.role == 'admin':
+			if not user.is_authenticated:
+				return [permissions.IsAuthenticated()]
+			if hasattr(user, 'profile') and getattr(user.profile, 'role', None) == 'admin':
 				return [permissions.IsAuthenticated()]
 			return [permissions.IsAuthenticated(), IsOwnerOrReadOnly()]
 		return [permissions.IsAuthenticated()]
@@ -115,6 +118,8 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 		return profile
 
 	def update(self, request, *args, **kwargs):
+		import logging
+		logger = logging.getLogger(__name__)
 		profile = self.get_object()
 		avatar = request.FILES.get('avatar')
 		if avatar:
@@ -132,17 +137,28 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 			file_path = f"avatars/{profile.user.username}_{avatar.name}"
 			try:
 				res = supabase.storage.from_('avatars').upload(file_path, avatar.read())
-				if res.get('error'):
+				logger.info(f"Supabase upload response: {res}")
+				if hasattr(res, 'error') and res.error:
+					logger.error(f"Supabase upload error: {res.error}")
 					return Response({'error': 'Failed to upload avatar.'}, status=400)
 				public_url = supabase.storage.from_('avatars').get_public_url(file_path)
+				logger.info(f"Supabase public URL: {public_url}")
+				if not public_url:
+					logger.error("Public URL for avatar is empty or None.")
+					return Response({'error': 'Failed to retrieve avatar URL.'}, status=400)
 				profile.avatar_url = public_url
-			except Exception:
+			except Exception as e:
+				logger.exception(f"Exception during avatar upload: {e}")
 				return Response({'error': 'Avatar upload failed. Please try again later.'}, status=400)
 		# Update other fields
 		for field in ['bio', 'website', 'location', 'privacy']:
 			if field in request.data:
 				setattr(profile, field, request.data[field])
-		profile.save()
+		try:
+			profile.save()
+		except Exception as e:
+			logger.exception(f"Exception during profile save: {e}")
+			return Response({'error': 'Failed to save profile.'}, status=400)
 		serializer = self.get_serializer(profile)
 		return Response(serializer.data)
 from django.shortcuts import render
