@@ -136,7 +136,7 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 			supabase = create_client(supabase_url, supabase_key)
 			file_path = f"avatars/{profile.user.username}_{avatar.name}"
 			try:
-				res = supabase.storage.from_('avatars').upload(file_path, avatar.read())
+				res = supabase.storage.from_('avatars').update(file_path, avatar.read())
 				logger.info(f"Supabase upload response: {res}")
 				if hasattr(res, 'error') and res.error:
 					logger.error(f"Supabase upload error: {res.error}")

@@ -48,6 +48,12 @@ class PostListCreateView(generics.ListCreateAPIView):
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 	def destroy(self, request, *args, **kwargs):
 		instance = self.get_object()
+		# Only owner or admin can delete
+		user = request.user
+		if not user.is_authenticated:
+			return Response({'error': 'Authentication required.'}, status=status.HTTP_401_UNAUTHORIZED)
+		if not (hasattr(user, 'profile') and getattr(user.profile, 'role', None) == 'admin') and instance.author != user:
+			return Response({'error': 'You do not have permission to delete this post.'}, status=status.HTTP_403_FORBIDDEN)
 		image_url = getattr(instance, 'image_url', None)
 		# Delete image from Supabase storage if it exists
 		if image_url:
@@ -65,6 +71,15 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 				except Exception as e:
 					logging.exception("Exception during image delete from Supabase:")
 		return super().destroy(request, *args, **kwargs)
+
+	def update(self, request, *args, **kwargs):
+		instance = self.get_object()
+		user = request.user
+		if not user.is_authenticated:
+			return Response({'error': 'Authentication required.'}, status=status.HTTP_401_UNAUTHORIZED)
+		if not (hasattr(user, 'profile') and getattr(user.profile, 'role', None) == 'admin') and instance.author != user:
+			return Response({'error': 'You do not have permission to update this post.'}, status=status.HTTP_403_FORBIDDEN)
+		return super().update(request, *args, **kwargs)
 	queryset = Post.objects.filter(is_active=True)
 	serializer_class = PostSerializer
 	def get_permissions(self):
