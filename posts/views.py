@@ -79,6 +79,25 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 			return Response({'error': 'Authentication required.'}, status=status.HTTP_401_UNAUTHORIZED)
 		if not (hasattr(user, 'profile') and getattr(user.profile, 'role', None) == 'admin') and instance.author != user:
 			return Response({'error': 'You do not have permission to update this post.'}, status=status.HTTP_403_FORBIDDEN)
+		image = request.FILES.get('image')
+		if image:
+			# Delete old image if exists
+			old_image_url = getattr(instance, 'image_url', None)
+			import re
+			if old_image_url:
+				match = re.search(r'/storage/v1/object/public/posts/(.+)$', old_image_url)
+				if match:
+					old_file_path = match.group(1)
+					try:
+						supabase_url = settings.SUPABASE_URL
+						supabase_key = settings.SUPABASE_KEY
+						supabase = create_client(supabase_url, supabase_key)
+						res_del = supabase.storage.from_('posts').remove([old_file_path])
+						logging.info(f"Supabase old post image delete response: {res_del}")
+						if hasattr(res_del, 'error') and res_del.error:
+							logging.error(f"Supabase delete error: {res_del.error}")
+					except Exception as e:
+						logging.exception(f"Exception during old post image delete: {e}")
 		return super().update(request, *args, **kwargs)
 	queryset = Post.objects.filter(is_active=True)
 	serializer_class = PostSerializer

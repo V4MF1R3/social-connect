@@ -134,6 +134,20 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 			supabase_url = settings.SUPABASE_URL
 			supabase_key = settings.SUPABASE_KEY
 			supabase = create_client(supabase_url, supabase_key)
+			# Delete old avatar if exists
+			old_avatar_url = getattr(profile, 'avatar_url', None)
+			import re
+			if old_avatar_url:
+				match = re.search(r'/storage/v1/object/public/avatars/(.+)$', old_avatar_url)
+				if match:
+					old_file_path = match.group(1)
+					try:
+						res_del = supabase.storage.from_('avatars').remove([old_file_path])
+						logger.info(f"Supabase old avatar delete response: {res_del}")
+						if hasattr(res_del, 'error') and res_del.error:
+							logger.error(f"Supabase delete error: {res_del.error}")
+					except Exception as e:
+						logger.exception(f"Exception during old avatar delete: {e}")
 			file_path = f"avatars/{profile.user.username}_{avatar.name}"
 			try:
 				res = supabase.storage.from_('avatars').update(file_path, avatar.read())
