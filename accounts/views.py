@@ -1,3 +1,52 @@
+# View another user's profile with privacy logic
+from .models import UserProfile
+from django.contrib.auth.models import User
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
+class UserProfileDetailView(APIView):
+	def get(self, request, user_id):
+		try:
+			user = User.objects.get(id=user_id)
+			profile = UserProfile.objects.get(user=user)
+		except (User.DoesNotExist, UserProfile.DoesNotExist):
+			return Response({'error': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+		# Privacy logic
+		request_user = request.user if request.user.is_authenticated else None
+		allowed = False
+		if profile.privacy == 'public':
+			allowed = True
+		elif profile.privacy == 'private':
+			allowed = (request_user == user)
+		elif profile.privacy == 'followers_only':
+			if request_user == user:
+				allowed = True
+			else:
+				from follows.models import Follow
+				allowed = request_user and Follow.objects.filter(follower=request_user, following=user).exists()
+		# Always show avatar and username
+		data = {
+			'id': profile.id,
+			'username': user.username,
+			'avatar_url': profile.avatar_url,
+		}
+		if allowed:
+			from .serializers import UserProfileSerializer
+			data.update(UserProfileSerializer(profile).data)
+		return Response(data)
+from rest_framework import permissions
+# User Search Endpoint
+from rest_framework import generics, filters
+from django.contrib.auth.models import User
+from .serializers import UserRegisterSerializer
+
+class UserSearchView(generics.ListAPIView):
+	queryset = User.objects.all()
+	serializer_class = UserRegisterSerializer
+	filter_backends = [filters.SearchFilter]
+	search_fields = ['username', 'email', 'first_name', 'last_name']
+	permission_classes = [permissions.IsAuthenticated]
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.models import User
@@ -104,30 +153,36 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 
 
 	def get_object(self):
-		# If accessing own profile, always allow
-		if str(self.kwargs.get('pk', '')) == str(self.request.user.profile.pk):
-			return self.request.user.profile
-		# Otherwise, check privacy
+		# Always allow avatar_url and username to be visible
+		from rest_framework.exceptions import PermissionDenied
 		profile = UserProfile.objects.get(pk=self.kwargs.get('pk')) if self.kwargs.get('pk') else self.request.user.profile
+		request_user = self.request.user
+		# If accessing own profile, always allow
+		if str(self.kwargs.get('pk', '')) == str(request_user.profile.pk):
+			return profile
+		# For public profiles, allow all fields
 		if profile.privacy == 'public':
 			return profile
-		elif profile.privacy == 'private':
-			if profile.user == self.request.user:
-				return profile
-			else:
-				from rest_framework.exceptions import PermissionDenied
-				raise PermissionDenied('This profile is private.')
+		# For private or followers_only, return a partial profile for non-allowed users
+		allowed = False
+		if profile.privacy == 'private':
+			allowed = profile.user == request_user
 		elif profile.privacy == 'followers_only':
-			if profile.user == self.request.user:
-				return profile
-			# Check if current user follows this user
-			from follows.models import Follow
-			if Follow.objects.filter(follower=self.request.user, following=profile.user).exists():
-				return profile
+			if profile.user == request_user:
+				allowed = True
 			else:
-				from rest_framework.exceptions import PermissionDenied
-				raise PermissionDenied('This profile is only visible to followers.')
-		return profile
+				from follows.models import Follow
+				allowed = Follow.objects.filter(follower=request_user, following=profile.user).exists()
+		if allowed:
+			return profile
+		# Return a partial profile with only avatar_url and username
+		class PartialProfile:
+			def __init__(self, profile):
+				self.id = profile.id
+				self.avatar_url = profile.avatar_url
+				self.user = profile.user
+				self.username = profile.user.username
+		return PartialProfile(profile)
 
 	def update(self, request, *args, **kwargs):
 		import logging
