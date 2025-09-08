@@ -182,5 +182,7 @@ SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 # CORS config
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://social-connect-frontend-gamma.vercel.app",
+    "https://social-connect-eosin.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
