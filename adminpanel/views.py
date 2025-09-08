@@ -63,4 +63,3 @@ class AdminStatsView(generics.GenericAPIView):
 		})
 from django.shortcuts import render
 
-# Create your views here.

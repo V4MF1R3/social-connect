@@ -172,4 +172,3 @@ class DeleteCommentView(generics.DestroyAPIView):
 		return Response({'message': 'Comment not found.'}, status=status.HTTP_404_NOT_FOUND)
 from django.shortcuts import render
 
-# Create your views here.

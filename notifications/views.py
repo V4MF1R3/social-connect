@@ -26,4 +26,3 @@ class MarkAllNotificationsReadView(generics.GenericAPIView):
 	def post(self, request):
 		Notification.objects.filter(recipient=request.user, is_read=False).update(is_read=True)
 		return Response({'message': 'All notifications marked as read.'})
- # Imports cleaned up for maintainability

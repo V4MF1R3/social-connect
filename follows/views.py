@@ -44,4 +44,3 @@ class GetFollowingView(generics.ListAPIView):
 		return Follow.objects.filter(follower_id=user_id)
 from django.shortcuts import render
 
-# Create your views here.

@@ -117,8 +117,7 @@ class ChangePasswordView(generics.UpdateAPIView):
 		user.set_password(new_password)
 		user.save()
 		return Response({'message': 'Password changed successfully.'})
- # ...existing code...
- # Imports cleaned up for maintainability
+ 
 
 class RegisterView(generics.CreateAPIView):
 	queryset = User.objects.all()
@@ -128,7 +127,7 @@ class RegisterView(generics.CreateAPIView):
 	def perform_create(self, serializer):
 		user = serializer.save(is_active=False)
 		token = default_token_generator.make_token(user)
-		verify_url = f"http://localhost:3000/verify-email?uid={user.id}&token={token}"
+		verify_url = f"https://social-connect-frontend-gamma.vercel.app/verify-email?uid={user.id}&token={token}"
 		send_mail(
 			'Verify your email',
 			f'Click the link to verify your account: {verify_url}',
