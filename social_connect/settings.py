@@ -179,6 +179,7 @@ SUPABASE_URL = os.getenv('SUPABASE_URL')
 SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 # Ensure these are set in your .env file and never hardcoded for security.
 
+
 # CORS config
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -186,3 +187,12 @@ CORS_ALLOWED_ORIGINS = [
     "https://social-connect-eosin.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins for testing
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
